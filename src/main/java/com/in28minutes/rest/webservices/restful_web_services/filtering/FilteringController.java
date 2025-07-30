@@ -37,6 +37,7 @@ public class FilteringController {
     }
 
     @GetMapping("/filtering-list-dynamic")
+    @SuppressWarnings("removal")
     public MappingJacksonValue filteringListDynamic(){
         List<SomeBean> someBeans = List.of(new SomeBean("value4", "value5", "value6"), new SomeBean("value1", "value2", "value3"));
         MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(someBeans);
