@@ -1,0 +1,1 @@
+insert into user_details (id, name, birth_date) values (1000,'Akash Mishra', current_date())

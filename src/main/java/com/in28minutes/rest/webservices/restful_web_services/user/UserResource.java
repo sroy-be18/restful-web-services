@@ -1,7 +1,6 @@
 package com.in28minutes.rest.webservices.restful_web_services.user;
 
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +13,11 @@ import java.util.List;
 @RestController
 public class UserResource {
 
-    @Autowired
     private UserDaoService userDaoService;
+
+    public UserResource(UserDaoService userDaoService){
+        this.userDaoService = userDaoService;
+    }
 
     @GetMapping("/users")
     public List<User> retrieveAllUsers(){
